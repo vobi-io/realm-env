@@ -8,6 +8,14 @@ development/staging/production environments.
 
 Install [realm-env](https://www.npmjs.com/package/realm-env) package in you application
 
+```bash
+$ npm install --save realm-env
+```
+OR
+```bash
+$ yarn add realm-env
+```
+
 Add script in  ``` package.json ```
 
 ```json
