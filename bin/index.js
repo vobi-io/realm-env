@@ -6,7 +6,7 @@ const path = require('path')
 const config = require('../lib/config')
 const { generateFunctions, generateTriggers } = require('../lib/generators')
 
-const functions = generateFunctions(config.functions, config.triggersPath)
+const functions = generateFunctions(config.functions, config.functionsPath)
 const triggers = generateTriggers(config.triggers, config.triggersPath)
 
 const files = [...functions, ...triggers]
