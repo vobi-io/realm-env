@@ -1,6 +1,6 @@
 # Realm Env
 
-Realm Env package builds realm functions/triggers on multiple environments.
+Realm Env package builds MongoDB Realm functions/triggers on multiple environments.
 Main purpose of this function is to avoid writing same function twice for 
 development/staging/production environments.
 
