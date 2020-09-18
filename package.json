@@ -1,6 +1,6 @@
 {
   "name": "realm-env",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "",
   "main": "./bin/index.js",
   "bin": {
