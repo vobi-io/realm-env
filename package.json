@@ -1,0 +1,13 @@
+{
+  "name": "realm-env",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "files": ["./build.js", "./helper.js"],
+  "scripts": {
+    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm publish"
+  },
+  "keywords": [],
+  "author": "Saba Chikhinashvili",
+  "license": "ISC"
+}
