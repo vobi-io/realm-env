@@ -5,7 +5,8 @@
   "main": "build.js",
   "files": [
     "./build.js",
-    "./helper.js"
+    "./helper.js",
+    "./config.js"
   ],
   "scripts": {
     "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm publish"

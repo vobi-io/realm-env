@@ -1,4 +1,4 @@
-const config = require(process.argv[2]).env
+const config = require('./config').env
 
 const replaceEnv = (file, env = 'production') => {
   let str = ''

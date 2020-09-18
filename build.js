@@ -1,13 +1,14 @@
 const fs = require('fs')
 const path = require('path')
-let config = {}
+
+const config = require('./config')
 
 let files = []
 
-const { capitalize, replaceEnv, generateFunctionConfig, generateTrigger } = require('./helper')
+const { capitalize, replaceEnv, generateFunctionConfig } = require('./helper')
 
 try {
-  config = require(process.argv[2])
+  config = require()
 } catch(err) {
   throw new Error('Config not specified')
 }
