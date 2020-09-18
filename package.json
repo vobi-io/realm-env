@@ -7,7 +7,8 @@
     "realm-env": "./bin/index.js"
   },
   "files": [
-    "**/*"
+    "bin/*",
+    "lib/*"
   ],
   "scripts": {
     "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm publish"
