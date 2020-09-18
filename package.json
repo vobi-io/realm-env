@@ -2,9 +2,9 @@
   "name": "realm-env",
   "version": "1.0.9",
   "description": "",
-  "main": "./lib/index.js",
+  "main": "./bin/index.js",
   "bin": {
-    "realm-env": "./lib/index.js"
+    "realm-env": "./bin/index.js"
   },
   "files": [
     "lib/**/*",
