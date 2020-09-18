@@ -4,53 +4,12 @@ const fs = require('fs')
 const path = require('path')
 
 const config = require('../lib/config')
-const { capitalize, replaceEnv, generateFunctionConfig } = require('../lib/helper')
+const { generateFunctions, generateTriggers } = require('../lib/generators')
 
-let files = []
+const functions = generateFunctions(config.functions, config.triggersPath)
+const triggers = generateTriggers(config.triggers, config.triggersPath)
 
-for (const functionName in config.functions) {
-  const fileName = `${functionName}.js`
-  const functionPath = path.join(__dirname, '../../../', config.functionsPath, fileName)
-  const file = fs.readFileSync(functionPath, 'utf8')
-
-  const functions = config.functions[functionName].env.map((env) => ({
-    file: replaceEnv(file, env),
-    name: env + capitalize(functionName),
-    fileName: env + capitalize(fileName),
-    path: functionPath,
-    type: 'function',
-    env,
-    config: generateFunctionConfig(env + capitalize(functionName))
-  })
-  )
-
-  files = [...files, ...functions]
-}
-
-
-for (const triggerName in config.triggers) {
-  const fileName = `${triggerName}.json`
-  const triggerPath = path.join(__dirname, '../../../', config.triggersPath, fileName)
-
-  const file = fs.readFileSync(triggerPath, 'utf8')
-  const parsedFile = JSON.parse(file)
-
-  const triggers = config.triggers[triggerName].env.map((env) => ({
-    name: env + capitalize(triggerName),
-    file: JSON.stringify({
-      ...parsedFile,
-      function_name: env + capitalize(parsedFile.function_name),
-      name: env + capitalize(parsedFile.name)
-    }),
-    type: 'trigger',
-    path: triggerPath,
-    env,
-    fileName: env + capitalize(fileName),
-  })
-  )
-
-  files = [...files, ...triggers]
-}
+const files = [...functions, ...triggers]
 
 const dest = path.join(__dirname, '../../../', config.destFolder)
 
