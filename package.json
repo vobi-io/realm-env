@@ -2,9 +2,12 @@
   "name": "realm-env",
   "version": "1.0.3",
   "description": "",
-  "main": "build.js",
+  "main": "index.js",
+  "bin": {
+    "build": "./index.js"
+  },
   "files": [
-    "./build.js",
+    "./index.js",
     "./helper.js",
     "./config.js"
   ],
