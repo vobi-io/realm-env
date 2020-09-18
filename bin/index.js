@@ -3,14 +3,14 @@
 const fs = require('fs')
 const path = require('path')
 
-const config = require('./config')
-const { capitalize, replaceEnv, generateFunctionConfig } = require('./helper')
+const config = require('../lib/config')
+const { capitalize, replaceEnv, generateFunctionConfig } = require('../lib/helper')
 
 let files = []
 
 for (const functionName in config.functions) {
   const fileName = `${functionName}.js`
-  const functionPath = path.join(__dirname, '../', config.functionsPath, fileName)
+  const functionPath = path.join(require.main, config.functionsPath, fileName)
   const file = fs.readFileSync(functionPath, 'utf8')
 
   const functions = config.functions[functionName].env.map((env) => ({
@@ -30,7 +30,7 @@ for (const functionName in config.functions) {
 
 for (const triggerName in config.triggers) {
   const fileName = `${triggerName}.json`
-  const triggerPath = path.join(__dirname, '../', config.triggersPath, fileName)
+  const triggerPath = path.join(require.main, config.triggersPath, fileName)
 
   const file = fs.readFileSync(triggerPath, 'utf8')
   const parsedFile = JSON.parse(file)
@@ -52,7 +52,7 @@ for (const triggerName in config.triggers) {
   files = [...files, ...triggers]
 }
 
-const dest = path.join(__dirname, '../', config.destFolder)
+const dest = path.join(require.main, config.destFolder)
 fs.mkdirSync(path.join(dest, 'functions'))
 fs.mkdirSync(path.join(dest, 'triggers'))
 
