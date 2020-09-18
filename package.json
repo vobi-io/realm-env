@@ -4,12 +4,10 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "build": "./index.js"
+    "realm-env": "./index.js"
   },
   "files": [
-    "./index.js",
-    "./helper.js",
-    "./config.js"
+    "./**/*"
   ],
   "scripts": {
     "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm publish"
