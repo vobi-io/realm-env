@@ -11,9 +11,10 @@
     "lib/*"
   ],
   "scripts": {
-    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm publish"
+    "pub": "git add . && git commit -m \"Updates\" && git push && npm version patch && npm publish"
   },
   "keywords": [],
+  "repository": "https://github.com/vobi-io/realm-env",
   "author": "Saba Chikhinashvili",
   "license": "ISC"
 }
