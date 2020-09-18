@@ -1,6 +1,6 @@
 # Realm Env
 
-Realm Env package builds MongoDB Realm functions/triggers on multiple environments.
+[Realm Env](https://www.npmjs.com/package/realm-env) package builds [MongoDB Realm](https://docs.mongodb.com/realm/) functions/triggers on multiple environments.
 Main purpose of this function is to avoid writing same function twice for 
 development/staging/production environments.
 
@@ -26,7 +26,7 @@ Add script in  ``` package.json ```
 }
 ```
 
-After you are done configuring Realm Env you to build your application on multiple environments run
+After you are done configuring [Realm Env](https://www.npmjs.com/package/realm-env) you to build your application on multiple environments run
 ```bash
 $ npm run build-realm
 ```
@@ -46,13 +46,13 @@ syntax is as this follows
 
 ## Configuration
 
-To configure Realm Env you should create one JSON configuration file
+To configure [Realm Env](https://www.npmjs.com/package/realm-env) you should create one JSON configuration file
 
 #### Parameters:
-- functionsPath -> Path to your functions written in MongoDB Realm [function syntax](https://docs.mongodb.com/realm/functions/)
-- triggersPath -> Path to your triggers written in MongoDB Realm [trigger syntax](https://docs.mongodb.com/realm/triggers/)
+- functionsPath -> Path to your functions written in [MongoDB Realm](https://docs.mongodb.com/realm/) [function syntax](https://docs.mongodb.com/realm/functions/)
+- triggersPath -> Path to your triggers written in [MongoDB Realm](https://docs.mongodb.com/realm/) [trigger syntax](https://docs.mongodb.com/realm/triggers/)
 - destFolder -> Path where generated files will be placed
-- realmConfig -> MongoDB Realm config.json file JSON [Object](https://docs.mongodb.com/realm/deploy/application-configuration-files/index.html#configuration) 
+- realmConfig -> [MongoDB Realm](https://docs.mongodb.com/realm/) config.json file JSON [Object](https://docs.mongodb.com/realm/deploy/application-configuration-files/index.html#configuration) 
 - functions -> Formatted list of function objects with following format
 For Example you want to create ``` deleteUsers ``` function on dev environment
 Syntax is as it follows
