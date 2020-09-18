@@ -13,11 +13,8 @@ const files = [...functions, ...triggers]
 
 const dest = path.join(__dirname, '../../../', config.destFolder)
 
-const isFunctionsDefined = fs.existsSync(path.join(dest, 'functions'))
-const isTriggersDefined = fs.existsSync(path.join(dest, 'triggers'))
-
-if (!isFunctionsDefined) { fs.mkdirSync(path.join(dest, 'functions')) }
-if (!isTriggersDefined) { fs.mkdirSync(path.join(dest, 'triggers')) }
+if (!fs.existsSync(path.join(dest, 'functions'))) { fs.mkdirSync(path.join(dest, 'functions')) }
+if (!fs.existsSync(path.join(dest, 'triggers'))) { fs.mkdirSync(path.join(dest, 'triggers')) }
 
 for (const file of files) {
   switch (file.type) {
