@@ -42,7 +42,7 @@ you should wrap environment variables inside brackets
 For example you have  ``` DB_NAME ``` variable set inside environment
 syntax is as this follows
 
-![Env Usage](./doc/env-usage.png)
+![Env Usage](https://github.com/vobi-io/realm-env/blob/master/doc/env-usage.png?raw=true)
 
 ## Configuration
 
